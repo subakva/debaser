@@ -1,0 +1,26 @@
+acceptance:
+  adapter: sqlserver
+  mode: dblib
+  database: debaser_acceptance
+  dataserver: DB_SERVER
+  username: debaser
+  password: DB_PASSWORD
+  timeout: 10000
+  encoding: utf8
+  azure: true
+
+development:
+  adapter: postgresql
+  username: postgres
+  pool: 5
+  timeout: 5000
+  database: debaser_development
+  min_messages: warning
+
+test:
+  adapter: postgresql
+  username: postgres
+  pool: 5
+  timeout: 5000
+  database: debaser_test
+  min_messages: warning
