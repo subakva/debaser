@@ -1,35 +1,52 @@
-<!DOCTYPE HTML>
-
-<html>
+<!doctype html>
+<html lang="en">
   <head>
+    <meta charset="utf-8">
     <title>Debaser</title>
-    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css" rel="stylesheet">
-    <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/js/bootstrap.min.js"></script>
-    <style type='text/css'>
-    </style>
+
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css">
+    <link rel="stylesheet" href="/lib/codemirror-3.02/lib/codemirror.css">
+    <link rel="stylesheet" href="/lib/codemirror-3.02/theme/monokai.css">
+    <link rel="stylesheet" href="/css/app.css">
+
+    <script src="//code.jquery.com/jquery-1.9.0.min.js"></script>
+    <!-- <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/js/bootstrap.min.js"></script> -->
+    <script src="/lib/codemirror-3.02/lib/codemirror.js"></script>
+    <script src="/lib/codemirror-3.02/mode/sql/sql.js"></script>
+    <script src="/js/app.js"></script>
   </head>
   <body>
-    <h1>Debaser</h1>
-    <form action='/query' method='POST' class='form-horizontal'>
-        <div class="control-group">
-          <div class='controls'>
-            <select name="connection">
-              <% @connections.each do |c| %>
-              <option><%= c %></option>
-              <% end %>
-            </select>
-          </div>
+    <div class="container">
+      <div class="row">
+        <div class="span12">
+          <form action='/query' method='POST' class='form-horizontal'>
+
+               <div class="control-group">
+                <div class='controlsX'>
+                  <select name="connection">
+                    <% @connections.each do |c| %>
+                    <option><%= c %></option>
+                    <% end %>
+                  </select>
+                </div>
+              </div>
+
+              <div class="control-group">
+                <div class='controlsX' id='editor-container'>
+                  <textarea id='query-editor' name='q' rows="10" placeholder='Enter SQL Here'></textarea>
+                </div>
+              </div>
+
+
+              <div class="control-group">
+                <div class='controlsX'>
+                  <button type='submit' class='btn btn-primary'>Run</button>
+                </div>
+              </div>
+
+          </form>
         </div>
-        <div class="control-group">
-          <div class='controls'>
-            <textarea name='q' rows="10" placeholder='Enter SQL Here'></textarea>
-          </div>
-        </div>
-        <div class="control-group">
-          <div class='controls'>
-            <button type='submit' class='btn btn-primary'>Run</button>
-          </div>
-        </div>
-    </form>
+      </div>
+    </div>
   </body>
 </html>
