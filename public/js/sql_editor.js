@@ -3,7 +3,9 @@
 define(
 
   [
-    'components/flight/lib/component'
+    'components/flight/lib/component',
+    'components/codemirror/lib/codemirror',
+    'components/codemirror/mode/sql/sql',
   ],
 
   function(defineComponent) {

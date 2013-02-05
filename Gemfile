@@ -1,5 +1,6 @@
 source "https://rubygems.org"
 
+gem 'rake'
 gem 'sinatra'
 gem 'activerecord', require: 'active_record'
 gem 'pg'
@@ -8,3 +9,9 @@ gem 'tiny_tds'
 gem 'activerecord-sqlserver-adapter',
   github: 'carbonfive/activerecord-sqlserver-adapter',
   branch: 'bugs/product_version_check-247'
+
+group :development, :test do
+  gem 'thin'
+  gem 'jasmine'
+end
+

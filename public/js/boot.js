@@ -3,15 +3,15 @@
 define(
   [
     'js/sql_editor',
-    'js/query_results'
+    'js/query_result'
   ],
   function(
     SQLEditor,
-    QueryResults
+    QueryResult
   ) {
     function initialize() {
       SQLEditor.attachTo('#sql-editor');
-      QueryResults.attachTo('#query-results');
+      QueryResult.attachTo('#query-result');
     }
     return initialize;
   }

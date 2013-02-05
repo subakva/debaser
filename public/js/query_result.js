@@ -8,9 +8,9 @@ define(
 
   function(defineComponent) {
 
-    return defineComponent(queryResults);
+    return defineComponent(queryResult);
 
-    function queryResults() {
+    function queryResult() {
     }
   }
 );
