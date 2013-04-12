@@ -1,6 +1,38 @@
-body {
-  padding-top: 20px;
-}
 .CodeMirror {
+  border: 1px solid #333;
+}
+
+.container {
+  width: 960px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.toolbar {
+  padding: 10px 0;
+}
+
+.toolbar select[name=connection] {
+  width: 250px;
+}
+
+.query-result {
+  width: 100%;
+  height: 300px;
+  overflow: scroll;
+}
+
+.query-result table {
+  border-collapse: collapse;
+}
+
+.query-result table th {
+  background-color: #333;
+  color: #FFF;
+  font-weight: normal;
+}
+
+.query-result table th,
+.query-result table td {
   border: 1px solid #333;
 }

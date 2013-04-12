@@ -5,7 +5,12 @@ end
 
 post '/query' do ||
   connection = get_connection(params[:connection])
-  @result = connection.select_all(params[:q])
+  # @result = connection.select_all(params[:q])
+  rows = connection.select_all(params[:q])
+  @result = {
+    columnNames: rows[0].keys,
+    rows: rows.map { |row| row.map { |(k,v)| v } }
+  }
   erb :result
 end
 

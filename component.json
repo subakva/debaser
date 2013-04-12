@@ -2,10 +2,10 @@
   "name": "debaser",
   "version": "0.0.0",
   "dependencies": {
-    "bootstrap": "~2.2.2",
-    "flight": "~1.0.0",
-    "requirejs": "~2.1.4",
+    "jquery": "1.9.1",
     "codemirror": "latest",
-    "mustache": "~0.7.2"
+    "underscore": "1.4.4",
+    "normalize-css": "~2.1.1"
   }
 }
+

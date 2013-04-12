@@ -8,10 +8,6 @@ Installation
 
     $ bundle                              # Install ruby gems
     $ bower install                       # Install web components
-    $ cd public/components/bootstrap                  # Build bootstrap...
-    $ npm install recess connect uglify-js jshint -g  #   - Install dependencies to build bootstrap
-    $ make                                            #   - Make it.
-    $ cd ../../..                                     #   - Get back.
     $ cp database.sample.yml database.yml # Copy the db config file
     $ open database.yml                   # Set up your db connections
     $ rackup                              # Run the server
@@ -19,7 +15,6 @@ Installation
 Future
 ---
 
-* ajaxify query execution and reporting
 * execute selection
 * keyboard shortcuts
 * save last-used connection
