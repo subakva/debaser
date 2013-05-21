@@ -22,4 +22,6 @@ Future
 * save preferences in browser
 * dump preferences to file
 * load preferences from file
+* wrap db calls in a timeout
+* stream data back to the client
 
