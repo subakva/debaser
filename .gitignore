@@ -1,4 +1,3 @@
 database.yml
-public/components/
-public/spec/components/
+vendor/components/
 tmp/

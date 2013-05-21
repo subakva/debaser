@@ -5,7 +5,8 @@
     "jquery": "1.9.1",
     "codemirror": "latest",
     "underscore": "1.4.4",
-    "normalize-css": "~2.1.1"
+    "normalize-css": "~2.1.1",
+    "mustache": "0.7.2"
   }
 }
 

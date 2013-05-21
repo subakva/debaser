@@ -2,6 +2,7 @@ source "https://rubygems.org"
 
 gem 'rake'
 gem 'sinatra'
+gem 'sprockets'
 gem 'activerecord', require: 'active_record'
 
 gem 'pg'
