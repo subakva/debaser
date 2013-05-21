@@ -33,7 +33,6 @@ $(function() {
     initialeQueryResults: function(resultSelector, resultTemplateSelector) {
       var templateHTML = $(resultTemplateSelector).html();
       this.queryResultTemplate = Mustache.compile(templateHTML);
-      // this.queryResultTemplate = _.template(templateHTML);
       this.queryResults = $(resultSelector);
     },
 
@@ -62,20 +61,16 @@ $(function() {
     },
 
     onQuerySuccess: function(data, status, xhr) {
-      //[{"version":"20120510215153"},{"version":"20121010223839"},{"version":"20121011172704"},{"version":"20121011174717"},{"version":"20121012000345"},{"version":"20121016212034"},{"version":"20121017211619"},{"version":"20121106223853"},{"version":"20121109002510"},{"version":"20121113000733"},{"version":"20121120222611"},{"version":"20121221002749"},{"version":"20121222020424"},{"version":"20121222054304"},{"version":"20130105000855"},{"version":"20130105003608"},{"version":"20130109224330"},{"version":"20130214193009"},{"version":"20130219232052"},{"version":"20130221011831"},{"version":"20130226192231"},{"version":"20130227183422"},{"version":"20130313223806"},{"version":"20130401181831"},{"version":"20130403035739"},{"version":"20130403213630"}]
       console.log('success: ', data, status, xhr);
       console.log('first: ', data.rows, data.rows[0]);
       var htmlResults = this.queryResultTemplate(data);
-      // var htmlResults = this.queryResultTemplate({
-      //   columnNames: _.keys(data[0]),
-      //   rows: data
-      // });
       this.queryResults.html(htmlResults);
     },
 
     onQueryError: function(xhr, status, error) {
       console.log('failed: ', xhr, status, error);
-      alert(error);
+      var data = $.parseJSON(xhr.responseText);
+      alert(data.message);
     }
   };
 

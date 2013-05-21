@@ -3,15 +3,27 @@ get '/' do
   erb :index
 end
 
-post '/query' do ||
-  connection = get_connection(params[:connection])
-  # @result = connection.select_all(params[:q])
-  rows = connection.select_all(params[:q])
-  @result = {
-    columnNames: rows[0].keys,
-    rows: rows.map { |row| row.map { |(k,v)| v } }
-  }
-  erb :result
+post '/query' do
+  begin
+    connection = get_connection(params[:connection])
+    # @result = connection.select_all(params[:q])
+    rows = connection.select_all(params[:q])
+    @result = {
+      success: true,
+      columnNames: rows[0].keys,
+      rows: rows.map { |row| row.map { |(k,v)| v } },
+    }
+    status 200
+    erb :result
+  rescue ActiveRecord::StatementInvalid => e
+    # TODO: log the full backtrace
+    status 400
+    @result = {
+      success: false,
+      message: e.message,
+    }
+    erb :result
+  end
 end
 
 def connection_configurations
